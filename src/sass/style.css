@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  background: #f3f3f4;
+  padding-top: 200px;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.userMain .userBlock {
+  float: left;
+  width: 100%;
+  height: 290px;
+  box-shadow: 0px 0px 23px -3px #ccc;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.userMain .userBlock .backgrounImg {
+  float: left;
+  overflow: hidden;
+  height: 77px;
+}
+
+.userMain .userBlock .backgrounImg img {
+  width: auto;
+}
+
+.userMain .userBlock .userImg {
+  text-align: center;
+}
+
+.userMain .userBlock .userImg img {
+  width: 80px;
+  height: 80px;
+  margin-top: -39px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+}
+
+.userMain .userBlock .userDescription {
+  text-align: center;
+}
+
+.userMain .userBlock .userDescription h5 {
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.userMain .userBlock .userDescription p {
+  margin-bottom: 5px;
+}
+
+.userMain .userBlock .userDescription .btn {
+  padding: 0px 23px 0px 23px;
+  height: 22px;
+  border-radius: 0;
+  font-size: 12px;
+  background: #0198dd;
+  color: #fff;
+}
+
+.userMain .userBlock .userDescription .btn:hover {
+  opacity: 0.7;
+}
+
+.userMain .userBlock .followrs {
+  display: inline-flex;
+  margin-right: 10px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+
+.userMain .userBlock .followrs .number {
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: -1px;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+/**
+ * 1. Adjust this to size
+ */
+.switch {
+  display: inline-block;
+  font-size: 20px;
+  /* 1 */
+  height: 1em;
+  width: 2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+  position: absolute;
+  right: 16px;
+  top: -155px;
+}
+
+.switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: -141px;
+  left: 168px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 300px;
+  height: 850px;
+  margin: -110px 0 0 -166px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+/*# sourceMappingURL=style.css.map */
